@@ -1,0 +1,146 @@
+/* Header subtitle */
+.report-subtitle {
+  color: #64748b;
+  margin: 8px 0 0 0;
+}
+
+/* === BỘ LỌC PHONG CÁCH MATERIAL DESIGN 3 === */
+.report-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: flex-end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 150px;
+  position: relative;
+}
+
+.filter-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #475569;
+  padding: 0 4px;
+  margin-bottom: 2px;
+}
+
+.filter-group select,
+.filter-group input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-bottom: 2px solid #e2e8f0;
+  border-radius: 8px 8px 0 0;
+  font-size: 16px;
+  background-color: #f1f5f9;
+  transition: all 0.2s ease-in-out;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+  outline: none;
+  background-color: #eef2ff;
+  border-bottom-color: #16a34a;
+}
+
+.update-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.update-btn:hover {
+  background-color: #15803d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.update-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.update-btn .material-symbols-rounded {
+  font-size: 20px;
+}
+
+/* Main grid for charts */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+/* Chart container styling */
+.chart-container {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  /* Mặc định trên mobile, mỗi chart chiếm full chiều rộng */
+  grid-column: span 12;
+}
+.chart-container.full-width {
+  grid-column: span 12;
+}
+.chart-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 16px 0;
+  text-align: center;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 12px;
+}
+
+/* Wrapper to control chart size within container */
+.chart-wrapper {
+  position: relative;
+  flex-grow: 1;
+  min-height: 300px;
+}
+
+/* === RESPONSIVE CHO BỐ CỤC BIỂU ĐỒ === */
+
+/* Tablet view: 2 cột */
+@media (min-width: 768px) {
+  .chart-container:not(.full-width) {
+    grid-column: span 6;
+  }
+}
+
+/* Desktop view: 3 cột cho các chart nhỏ */
+@media (min-width: 1200px) {
+  .chart-container:not(.full-width) {
+    grid-column: span 4;
+  }
+}
+
+/* Responsive cho bộ lọc trên mobile */
+@media (max-width: 767px) {
+  .chart-title {
+    font-size: 16px;
+  }
+  .report-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

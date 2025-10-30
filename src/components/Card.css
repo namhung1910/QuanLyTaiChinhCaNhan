@@ -1,0 +1,152 @@
+/* Card component styles */
+.card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  border: 1px solid #e9ecef;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.card-content {
+  position: relative;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+  flex: 1;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: 12px;
+}
+
+.card-btn {
+  background: none;
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.edit-btn {
+  color: #007bff;
+}
+
+.edit-btn:hover {
+  background: #e3f2fd;
+  color: #0056b3;
+}
+
+.delete-btn {
+  color: #dc3545;
+}
+
+.delete-btn:hover {
+  background: #f8d7da;
+  color: #a71e2c;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.card-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.card-tag {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.type-tag.income {
+  background: #d4edda;
+  color: #155724;
+}
+
+.type-tag.expense {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.default-tag {
+  background: #cce5ff;
+  color: #004085;
+}
+
+/* Grid layout for cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .card {
+    margin-bottom: 12px;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .card-actions {
+    margin-left: 0;
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 12px;
+  }
+  
+  .card-title {
+    font-size: 1rem;
+  }
+  
+  .card-description {
+    font-size: 0.85rem;
+  }
+}

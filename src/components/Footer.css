@@ -1,0 +1,58 @@
+/* Footer styles using the same Material Design 3 variables from NavBar */
+.footer {
+  background: var(--md-surface);
+  border-top: 1px solid var(--md-surface-variant);
+  padding: 24px 20px;
+  box-shadow: var(--md-shadow);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Căn giữa nội dung */
+}
+
+.footer-text {
+  color: var(--md-on-surface-variant);
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0; /* Bỏ margin mặc định của thẻ <p> */
+}
+
+/* Style cho chữ 'mate' (chỉ màu, không hiệu ứng) */
+.mate-text {
+  color: #2b8a3e;
+  font-weight: 700; /* Làm cho chữ đậm hơn */
+}
+
+/* Style cho trái tim (có màu và hiệu ứng) */
+.sparkling-heart {
+  color: #2b8a3e;
+  margin-left: 5px; /* Tạo khoảng cách nhỏ */
+  display: inline-block; /* Giúp animation mượt hơn */
+  animation: sparkle 1.5s infinite ease-in-out;
+}
+
+/* Định nghĩa animation 'sparkle' cho trái tim */
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.25); /* Phóng to hơn một chút cho nổi bật */
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 16px;
+  }
+  .footer-text {
+    text-align: center;
+  }
+}

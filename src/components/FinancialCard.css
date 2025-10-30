@@ -1,0 +1,261 @@
+/* Financial Card Component - Material Design 3 */
+
+.financial-card {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: 120px;
+  box-sizing: border-box;
+
+  /* --- Tối ưu: Khai báo biến CSS cho màu sắc mặc định --- */
+  --card-primary-color: #6b7280;
+  --card-background-color: #f9fafb;
+  --card-icon-color: #6b7280;
+}
+
+/* --- Tối ưu: Gán giá trị cho biến CSS dựa trên data-type --- */
+.financial-card[data-type="income"] {
+  --card-primary-color: #0ea5e9;
+  --card-background-color: #e3f2fd;
+  --card-icon-color: #0ea5e9;
+}
+
+.financial-card[data-type="expense"] {
+  --card-primary-color: #ef4444;
+  --card-background-color: #ffebee;
+  --card-icon-color: #ef4444;
+}
+
+.financial-card[data-type="balance"] {
+  --card-primary-color: #22c55e;
+  --card-background-color: #e8f5e8;
+  --card-icon-color: #22c55e;
+}
+
+.financial-card__container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 120px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  border: 1px solid #e9ecef;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+  /* --- Tối ưu: Sử dụng biến CSS cho viền trái --- */
+  border-left: 3px solid var(--card-primary-color);
+}
+
+.financial-card__container:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Icon Section */
+.financial-card__icon-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.financial-card__icon-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  /* --- Tối ưu: Sử dụng biến CSS --- */
+  background-color: var(--card-background-color);
+}
+
+.financial-card__icon {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  /* --- Tối ưu: Sử dụng biến CSS --- */
+  color: var(--card-icon-color);
+}
+
+/* Content Section */
+.financial-card__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.financial-card__amount {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #2c3e50;
+  word-break: break-word;
+}
+
+.financial-card__label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #6c757d;
+  line-height: 1.4;
+}
+
+/* Trend indicator */
+.financial-card__trend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.financial-card__trend--up {
+  background: #e8f5e8;
+  color: #2e7d32;
+}
+
+.financial-card__trend--down {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.financial-card__trend .material-symbols-rounded {
+  font-size: 16px;
+}
+
+/* Decorative elements */
+.financial-card__decoration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.financial-card__accent {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  opacity: 0.1;
+  transform: scale(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* --- Tối ưu: Sử dụng biến CSS --- */
+  background-color: var(--card-primary-color);
+}
+
+.financial-card:hover .financial-card__accent {
+  transform: scale(1);
+}
+
+/* Responsive Design - Giữ nguyên không đổi */
+@media (max-width: 1200px) {
+  .financial-card__amount {
+    font-size: 18px;
+  }
+  
+  .financial-card__container {
+    padding: 14px;
+    min-height: 110px;
+  }
+}
+
+@media (max-width: 768px) {
+  .financial-card {
+    min-height: 100px;
+  }
+  
+  .financial-card__container {
+    padding: 12px;
+    gap: 8px;
+    min-height: 100px;
+  }
+  
+  .financial-card__icon-wrapper {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .financial-card__icon {
+    font-size: 18px;
+  }
+  
+  .financial-card__amount {
+    font-size: 16px;
+  }
+  
+  .financial-card__label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .financial-card {
+    min-height: 90px;
+  }
+  
+  .financial-card__container {
+    padding: 10px;
+    gap: 6px;
+    min-height: 90px;
+  }
+  
+  .financial-card__icon-wrapper {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .financial-card__icon {
+    font-size: 16px;
+  }
+  
+  .financial-card__amount {
+    font-size: 14px;
+    line-height: 1.1;
+  }
+  
+  .financial-card__label {
+    font-size: 11px;
+  }
+}
+
+/* Animation for loading state - Giữ nguyên không đổi */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.financial-card--loading .financial-card__amount {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+  color: transparent;
+  border-radius: 4px;
+}
+
+.financial-card--loading .financial-card__label {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+  color: transparent;
+  border-radius: 4px;
+  width: 60%;
+}

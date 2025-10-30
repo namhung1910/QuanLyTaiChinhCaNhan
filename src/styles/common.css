@@ -1,0 +1,59 @@
+/* Common styles used across multiple components */
+.container { 
+  padding: 24px; 
+  max-width: 1180px; 
+  margin: 0 auto; 
+}
+
+.row, .grid { 
+  display: grid; 
+  grid-template-columns: repeat(6, 1fr); 
+  gap: 12px; 
+  margin-bottom: 12px; 
+}
+
+.list { 
+  list-style: none; 
+  padding: 0; 
+  display: grid; 
+  gap: 8px; 
+}
+
+.list li { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 12px; 
+  border: 1px solid var(--md-sys-color-outline); 
+  border-radius: 12px; 
+  background: white; 
+}
+
+input, select { 
+  padding: 12px; 
+  border: 1px solid var(--md-sys-color-outline); 
+  border-radius: 12px; 
+  background: var(--md-sys-color-surface-variant); 
+}
+
+button { 
+  cursor: pointer; 
+  background: var(--md-sys-color-primary); 
+  color: white; 
+  border: none; 
+  padding: 10px 16px; 
+  border-radius: 999px; 
+}
+
+.scroll { 
+  max-height: 300px; 
+  overflow: auto; 
+  background: #fafafa; 
+  padding: 8px; 
+  border: 1px solid var(--md-sys-color-outline); 
+  border-radius: 12px; 
+}
+
+.warn li { 
+  background: #fff7ed; 
+}

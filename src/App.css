@@ -1,0 +1,10 @@
+/* App.css - This file is now deprecated as styles have been moved to component-specific CSS files */
+/* All styles have been moved to:
+   - src/styles/common.css (for shared styles)
+   - src/components/NavBar.css (for navigation)
+   - src/pages/Auth.css (for authentication pages)
+   - src/pages/DanhMuc.css (for category page)
+   - src/pages/GiaoDich.css (for transaction page)
+   - src/pages/NganSach.css (for budget page)
+   - src/pages/BaoCao.css (for report page)
+*/

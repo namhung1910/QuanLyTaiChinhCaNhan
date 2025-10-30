@@ -1,0 +1,189 @@
+/* GiaoDich page specific styles */
+
+/* Layout for sections */
+.section-card {
+  margin-top: 12px;
+}
+.section-card:first-child {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+/* Header of the transactions list */
+.transactions-header {
+  display: flex;
+  align-items: center;
+}
+.transactions-header-title {
+  flex: 1;
+}
+
+/* Container for the list of transaction cards */
+.transactions-list {
+  margin-top: 16px;
+}
+
+/* Toggle View Button */
+.toggle-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #e8fff3;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #15803d;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.toggle-view-btn:hover {
+  background: #dcfce7;
+  transform: translateY(-1px);
+}
+.toggle-view-btn .material-symbols-rounded {
+  font-size: 18px;
+  margin-right: 2px;
+}
+
+/* Financial Overview Grid */
+.financial-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+/* Transaction Details within a card */
+.transaction-details {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e9ecef;
+}
+.transaction-note {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+.transaction-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: #e3f2fd;
+  color: #1976d2;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag .material-symbols-rounded {
+  font-size: 14px;
+}
+
+/* Quick Actions */
+.quick-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.quick-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.quick-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.quick-btn.income {
+  background: #16a34a;
+  color: #fff;
+}
+.quick-btn.income:hover {
+  background: #15803d;
+}
+.quick-btn.expense {
+  background: #ef4444;
+  color: #fff;
+}
+.quick-btn.expense:hover {
+  background: #dc2626;
+}
+/* Combined selector for similar buttons */
+.quick-btn.export, 
+.quick-btn.search {
+  background: #f3f4f6;
+  color: #111827;
+}
+.quick-btn.export:hover, 
+.quick-btn.search:hover {
+  background: #e5e7eb;
+}
+
+/* Empty State & Pagination */
+.empty-state {
+  text-align: center;
+  color: #6b7280;
+  padding: 24px 0;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 0 4px;
+}
+/* Combined selector for all pagination buttons */
+.pagination .page,
+.pagination .nav {
+  border: none;
+  background: #eaf6ef;
+  color: #15803d;
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  min-width: 36px; /* Ensure consistent size */
+}
+.pagination .page.active {
+  background: #15803d;
+  color: #fff;
+  font-weight: 700;
+}
+.pagination .nav:disabled {
+  opacity: .4;
+  cursor: default;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .financial-overview-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .quick-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

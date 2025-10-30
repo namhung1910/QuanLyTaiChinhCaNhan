@@ -1,0 +1,157 @@
+/* NganSach page specific styles */
+.action-buttons-container {
+  margin-bottom: 20px;
+}
+.btn-refresh {
+  margin-left: 10px;
+}
+.warnings-header {
+  margin-top: 24px;
+}
+
+/* Budget Card styles */
+.budget-progress {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e9ecef;
+}
+.budget-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+.budget-percentage {
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: #e3f2fd;
+  color: #1976d2;
+}
+.remaining-days {
+  color: #6b7280;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: #28a745;
+  transition: width 0.3s ease;
+}
+
+/* State-based colors for budget progress */
+.budget-percentage.warning, .progress-fill.warning {
+  background: #ffc107;
+  color: #856404;
+}
+.budget-percentage.danger, .progress-fill.danger {
+  background: #dc3545;
+  color: #f8d7da;
+}
+
+/* Warning Card styles */
+.warning-card {
+  border-left: 4px solid #ffc107;
+  background: #fffbf0;
+}
+.warning-percentage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #856404;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+.warning-percentage .material-symbols-rounded {
+  font-size: 18px;
+}
+.no-warnings {
+  text-align: center;
+  padding: 24px;
+  color: #6b7280;
+}
+.no-warnings .material-symbols-rounded {
+  font-size: 48px;
+  color: #2b8a3e;
+  margin-bottom: 8px;
+}
+.no-warnings p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Form hints in modal */
+.form-hint {
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 4px;
+}
+.form-hint.loading { color: #666; }
+.form-hint.warning { color: #ff9800; }
+
+
+/* Renewal Dialog styles */
+.renewal-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.renewal-dialog {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+.renewal-dialog-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: #dc2626;
+}
+.renewal-dialog-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+.renewal-dialog-content p {
+  margin: 0 0 16px 0;
+  color: #374151;
+}
+.expired-list {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+.expired-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+.expired-item:last-child {
+  border-bottom: none;
+}
+.renewal-dialog-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}

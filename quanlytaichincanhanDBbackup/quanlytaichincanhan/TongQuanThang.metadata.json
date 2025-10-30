@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"nguoiDung":{"$numberInt":"1"},"thang":{"$numberInt":"1"},"nam":{"$numberInt":"1"}},"name":"nguoiDung_1_thang_1_nam_1","background":true,"unique":true}],"uuid":"1d4d9dfa7daa4edfbe7f79c116ea6534","collectionName":"TongQuanThang","type":"collection"}

@@ -127,7 +127,7 @@
     </p>
 - Giao diện Chatbot Fingy:
     <p align="center">
-    <img src="public/imageforGit/ChatbotFingy.png" alt="Chatbot " width="500"/>
+    <img src="public/imageforGit/ChatbotFingy.png" alt="Chatbot " width="400"/>
     </p>    
 
 ## 5. 📞 Liên hệ: 

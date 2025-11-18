@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { api } from '../api'
 import './ChatWidget.css'
 import fingyImage from '../assets/Fingy.png'
+import ReactMarkdown from 'react-markdown';
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false)
@@ -45,7 +46,7 @@ export default function ChatWidget() {
 
   const loadInitialData = useCallback(async () => {
     // Set initial greeting and suggested questions
-    setMessages([createMessage('bot', `👋 Xin chào! Tôi là trợ lý tài chính thông minh của bạn. Tôi có thể giúp bạn phân tích tài chính, đưa ra lời khuyên và trả lời các câu hỏi về quản lý tiền bạc. Hãy hỏi tôi bất cứ điều gì! 💰`)])
+    setMessages([createMessage('bot', `👋 Xin chào! Tôi là Fingy - trợ lý tài chính thông minh của bạn. Tôi có thể giúp bạn phân tích tài chính, đưa ra lời khuyên và trả lời các câu hỏi về quản lý tiền bạc. Hãy hỏi tôi bất cứ điều gì! 💰`)])
     setSuggestedQuestions([
       "Tôi chi tiêu nhiều nhất ở đâu?",
       "Tháng này tôi có tiết kiệm được không?",
@@ -146,6 +147,10 @@ export default function ChatWidget() {
     }
   }
 
+  const renderMessageContent = (content) => {
+    return <ReactMarkdown>{content}</ReactMarkdown>;
+  };
+
   return (
     <div className="chat-widget">
       {/* Chat Toggle Button */}
@@ -214,7 +219,7 @@ export default function ChatWidget() {
                   )}
                 </div>
                 <div className="message-content">
-                  <div className="message-text">{msg.content}</div>
+                  <div className="message-text">{renderMessageContent(msg.content)}</div>
                   <div className="message-time">
                     {new Date(msg.timestamp).toLocaleTimeString('vi-VN', {
                       hour: '2-digit', minute: '2-digit'

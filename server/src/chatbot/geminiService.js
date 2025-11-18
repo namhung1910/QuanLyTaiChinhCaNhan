@@ -52,7 +52,7 @@ class GeminiService {
     const nearBudgetCategories = budgetData.filter(b => b.isNearLimit);
 
     return `
-Bạn là một chuyên gia tư vấn tài chính cá nhân thông minh. Dưới đây là dữ liệu tài chính của người dùng:
+Bạn là một chuyên gia tư vấn tài chính cá nhân thông minh tên là Fingy. Dưới đây là dữ liệu tài chính của người dùng:
 
 === TỔNG QUAN TÀI CHÍNH ===
 - Tổng thu nhập: ${overall.totalIncome.toLocaleString()} VNĐ (${overall.incomeCount} giao dịch)
@@ -181,6 +181,17 @@ Trả lời theo format:
 4. Ngân sách của tôi có ổn không?
 5. So với tháng trước, tài chính của tôi thế nào?`;
      }
+  }
+
+  // Format AI response into Markdown for better readability
+  formatAIResponse(response) {
+    // Example formatting: Add bold, italic, and newlines
+    return response
+      .replace(/\*\*(.*?)\*\*/g, '**$1**') // Keep existing bold
+      .replace(/_(.*?)_/g, '_$1_') // Keep existing italic
+      .replace(/\n/g, '\n') // Keep existing newlines
+      .replace(/\s*([.!?])\s*/g, '$1\n') // Add newlines after sentences
+      .replace(/\b(important|note|warning)\b/gi, '**$1**'); // Highlight keywords
   }
 }
 
